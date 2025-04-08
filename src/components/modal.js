@@ -1,16 +1,6 @@
-import { popups } from '../index.js'
-
+const popups = document.querySelectorAll('.popup'); //фон попап окна
 
 export const openPopup = (popup) => {
-const popupEdit = document.querySelector('.popup_type_edit');
-const nameInput = popupEdit.querySelector('.popup__input_type_name');
-const descriptionInput = popupEdit.querySelector('.popup__input_type_description');
-const profileName = document.querySelector('.profile__title').textContent; 
-const profileDescription = document.querySelector('.profile__description').textContent;
-
- nameInput.value = profileName;
- descriptionInput.value = profileDescription;
-
   popup.classList.add('popup_is-opened');
   document.addEventListener('keyup', handleEscKeyUp);
 }
@@ -26,5 +16,12 @@ export function handleEscKeyUp(evt) {
     closePopup(popupOpened);
     }
   };
-    
+
+  popups.forEach(popup => {
+    popup.addEventListener('click', (event) => {
+       if (event.target === popup) {
+       closePopup(popup); 
+     }
+   });
+  });    
  
