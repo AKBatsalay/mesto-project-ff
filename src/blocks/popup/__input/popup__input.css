@@ -9,6 +9,26 @@
   padding: 10px 0 0;
   margin-bottom: 10px;
 }
+.popup__input:invalid {
+  border-bottom: 1px solid red;
+}
+
+.form__input-error{
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: red;
+}
+
+.popup__input:valid {
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.form__set {
+  border:none;
+}
+
 
 .popup__input:last-of-type {
   margin-bottom: 0;
